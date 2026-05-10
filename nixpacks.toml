@@ -23,7 +23,7 @@ nixPkgs = [
 cmds = ["composer install --no-dev --optimize-autoloader --no-interaction"]
 
 [phases.build]
-cmds = ["echo 'assets pre-built'"]
+cmds = ["echo 'skip npm'"]
 
 [start]
-cmd = "php artisan config:clear; php artisan config:cache; php artisan route:cache; php artisan view:cache; php artisan storage:link --force; php -S 0.0.0.0:$PORT server.php"
+cmd = "php -S 0.0.0.0:$PORT server.php"
