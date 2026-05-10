@@ -26,4 +26,5 @@ cmds = ["composer install --no-dev --optimize-autoloader --no-interaction"]
 cmds = ["echo 'skip npm'"]
 
 [start]
-cmd = "php -S 0.0.0.0:$PORT server.php"
+cmd = "php artisan config:clear; php artisan route:clear; php artisan view:clear; php -S 0.0.0.0:$PORT server.php"
+
