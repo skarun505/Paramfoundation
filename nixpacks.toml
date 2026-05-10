@@ -1,13 +1,5 @@
-[phases.setup]
-nixPkgs = ["php82", "php82Packages.composer", "nodejs_20"]
-
-[phases.install]
-cmds = [
-    "composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs"
-]
-
 [phases.build]
-cmds = ["echo 'assets pre-built'"]
+cmds = ["echo 'Vite assets pre-built, skipping npm'"]
 
 [start]
-cmd = "php artisan config:clear; php artisan route:clear; php artisan view:clear; php -S 0.0.0.0:$PORT server.php"
+cmd = "php artisan config:clear; php -S 0.0.0.0:$PORT server.php"
